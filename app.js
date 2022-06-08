@@ -46,17 +46,17 @@ connection.end();
 app.use(morgan("dev"));
 app.use(express.json());
 
-//Base
-app.get("/", (req,res) => {
-    res.send("API TATUATE");
-});
-
 //Routes
 app.use("/tatuadores", require("./routes/tatuadoresRoute"));
 app.use("/tatuajes", require("./routes/tatuajesRoute"));
 app.use("/categorias", require("./routes/categoriasRoute"));
 app.use("/estudios", require("./routes/estudiosRoute"));
 
-app.listen(3000, () => {
+app.listen(process.env.PORT || 3000, () => {
     console.log("Server running on port", 3000);
+});
+
+//Base
+app.get("/", (req,res) => {
+    res.send("API TATUATE");
 });
