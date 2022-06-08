@@ -9,9 +9,9 @@ const cors = require('cors');
 require('dotenv').config();
 
 
-const corOptions = {
-    origin: 'http://localhost:3000',"https://tatuate.herokuapp.com/";
-};
+// const corOptions = {
+//     origin: {'http://localhost:3000',"https://tatuate.herokuapp.com/"}
+// };
 
 const swaggerOptions = {
     swaggerDefinition: {
@@ -29,7 +29,8 @@ const swaggerOptions = {
 
 const swaggerDocs = swaggerJsDoc(swaggerOptions);
 
-app.use(cors(corOptions));
+// app.use(cors(corOptions));
+app.use(cors());
 app.use('/docs', swaggerUi.serve, swaggerUi.setup(swaggerDocs));
 
 //DB
