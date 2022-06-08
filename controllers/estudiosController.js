@@ -25,6 +25,13 @@ const getOneEstudio = async (req, res) => {
     res.status(200).send(estudio);
 }
 
+const getEstudioImage = async (req,res) => {
+    let id = req.params.id
+    let estudio = await Estudios.findOne({ where: { id: id }});
+    console.log(estudio);
+    res.status(200).sendFile(estudio.imagen);
+}
+
 const updateEstudio = async (req, res) => {
     let id = req.params.id
     let estudio = await Estudios.update(req.body, { where: { id: id }});
