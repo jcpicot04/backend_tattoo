@@ -10,7 +10,7 @@ require('dotenv').config();
 
 
 const corOptions = {
-    origin: 'http://localhost:3000'
+    origin: 'http://localhost:3000',"https://tatuate.herokuapp.com/";
 };
 
 const swaggerOptions = {
