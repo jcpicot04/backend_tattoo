@@ -55,6 +55,26 @@ router.get('/getAllCategorias', categoriasController.getAllCategorias);
  *         description: Error
  */
 router.get('/getOneCategory/:id', categoriasController.getOneCategory);
+/**
+ * @swagger
+ * /categorias/getCategoryImage/{id}:
+ *   get:
+ *     summary: Recoger imagen de una categoría
+ *     tags: [Gets]
+ *     parameters:
+ *       - in : path
+ *         name: id
+ *         description: ID de la categoría
+ *         schema:
+ *           type: integer
+ *         required: true
+ *     responses:
+ *       200:
+ *         description: Imagen de la categoría seleccionada
+ *       400:
+ *         description: Error
+ */
+ router.get('/getCategoryImage/:id', categoriasController.getCategoryImage);
 router.put('/updateCategory/:id', categoriasController.updateCategory);
 /**
  * @swagger

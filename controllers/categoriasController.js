@@ -11,6 +11,12 @@ const addCategory = async (req, res) => {
     res.status(200).send(category);
 }
 
+const getCategoryImage = async (req,res) => {
+    let id = req.params.id
+    let category = await Categorias.findOne({ where: { id: id }});
+    category ? res.sendFile(require('path').resolve(__dirname, '..') + (category.imagen).replace(".", "")) : res.status(404).send("ID no existente");
+}
+
 const getAllCategorias = async (req, res) => {
     let categories = await Categorias.findAll({});
     res.status(200).send(categories);
@@ -37,6 +43,7 @@ const deleteCategory = async (req, res) => {
 
 module.exports = {
     addCategory,
+    getCategoryImage,
     getAllCategorias,
     getOneCategory,
     updateCategory,
