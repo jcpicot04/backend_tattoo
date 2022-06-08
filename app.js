@@ -31,6 +31,7 @@ const swaggerDocs = swaggerJsDoc(swaggerOptions);
 
 // app.use(cors(corOptions));
 app.use(cors());
+app.use(express.static('public')); 
 app.use('/docs', swaggerUi.serve, swaggerUi.setup(swaggerDocs));
 
 //DB

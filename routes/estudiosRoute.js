@@ -15,6 +15,7 @@ router.post('/addEstudio', estudiosController.addEstudio);
 
 router.get('/getAllEstudios', estudiosController.getAllEstudios);
 router.get('/getOneEstudio/:id', estudiosController.getOneEstudio);
+router.get('/getEstudioImage/:id', estudiosController.getEstudioImage);
 router.put('/updateEstudio/:id', estudiosController.updateEstudio);
 router.delete('/deleteEstudio/:id', estudiosController.deleteEstudio);
 

@@ -28,8 +28,8 @@ const getOneEstudio = async (req, res) => {
 const getEstudioImage = async (req,res) => {
     let id = req.params.id
     let estudio = await Estudios.findOne({ where: { id: id }});
-    console.log(estudio);
-    res.status(200).sendFile(estudio.imagen);
+    console.log(require('path').resolve(__dirname, '..') + (estudio.imagen).replace(".", ""));
+    res.sendFile(require('path').resolve(__dirname, '..') + (estudio.imagen).replace(".", ""));
 }
 
 const updateEstudio = async (req, res) => {
@@ -48,6 +48,7 @@ module.exports = {
     addEstudio,
     getAllEstudios,
     getOneEstudio,
+    getEstudioImage,
     updateEstudio,
     deleteEstudio
 }
