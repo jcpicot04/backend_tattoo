@@ -68,11 +68,11 @@ router.post('/addTatuador', tatuadoresController.addTatuador);
  * @swagger
  * /tatuadores/getAllTatuadores:
  *   get:
- *     summary: Recoger todos los estudios
+ *     summary: Recoger todos los tatuadores
  *     tags: [Gets]
  *     responses:
  *       200:
- *         description: Estudios
+ *         description: Tatuadores
  *       400:
  *         description: Error
  */
@@ -81,12 +81,12 @@ router.get('/getAllTatuadores', tatuadoresController.getAllTatuadores);
  * @swagger
  * /tatuadores/getOneTatuador/{id}:
  *   get:
- *     summary: Recoger un estudio
+ *     summary: Recoger un tatuador
  *     tags: [Gets]
  *     parameters:
  *       - in : path
  *         name: id
- *         description: ID del estudio
+ *         description: ID del tatuador
  *         schema:
  *           type: integer
  *         required: true
@@ -102,18 +102,18 @@ router.put('/updateTatuador/:id', tatuadoresController.updateTatuador);
  * @swagger
  * /tatuadores/deleteTatuador/{id}:
  *   delete:
- *     summary: Eliminar un estudio
+ *     summary: Eliminar un tatuador
  *     tags: [Deletes]
  *     parameters:
  *       - in : path
  *         name: id
- *         description: ID del estudio
+ *         description: ID del tatuador
  *         schema:
  *           type: integer
  *         required: true
  *     responses:
  *       200:
- *         description: Estudio eliminado
+ *         description: Tatuador eliminado
  *       400:
  *         description: Error
  */

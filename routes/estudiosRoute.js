@@ -11,31 +11,31 @@ const estudiosController = require("../controllers/estudiosController.js");
  *     parameters:
  *       - in : path
  *         name: nombre
- *         description: Nombre de la categoría
+ *         description: Nombre del estudio
  *         schema:
  *           type: string
  *         required: true
  *       - in : path
  *         name: latitud
- *         description: Latitud de la categoría
+ *         description: Latitud del estudio
  *         schema:
  *           type: string
  *         required: true
  *       - in : path
  *         name: longitud
- *         description: Longitud de la categoría
+ *         description: Longitud del estudio
  *         schema:
  *           type: string
  *         required: true
  *       - in : path
  *         name: imagen
- *         description: Imagen de la categoría
+ *         description: Imagen del estudio
  *         schema:
  *           type: string
  *         required: true
  *     responses:
  *       200:
- *         description: Categoría añadida
+ *         description: Estudio añadido
  *       400:
  *         description: Error
  */
