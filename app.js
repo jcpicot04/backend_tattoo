@@ -21,7 +21,7 @@ const swaggerOptions = {
             contact: {
                 name: 'Juan Carlos Picot Juan'
             },
-            servers: ["http://localhost:3000"]
+            servers: ["http://localhost:3000","https://tatuate.herokuapp.com/"]
         }
     },
     apis: ["./routes/*.js"]
