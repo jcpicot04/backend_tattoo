@@ -15,6 +15,12 @@ const categoriasController = require("../controllers/categoriasController.js");
  *         schema:
  *           type: string
  *         required: true
+ *       - in : path
+ *         name: imagen
+ *         description: Imagen de la categoría
+ *         schema:
+ *           type: string
+ *         required: true
  *     responses:
  *       200:
  *         description: Categoría añadida

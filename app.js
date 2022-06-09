@@ -1,6 +1,7 @@
 const express = require("express");
 const mysql = require('mysql2');
 const morgan = require("morgan");
+const fileUpload = require('express-fileupload');
 const app = express();
 const swaggerJsDoc = require("swagger-jsdoc");
 const swaggerUi = require("swagger-ui-express");
@@ -31,6 +32,7 @@ const swaggerDocs = swaggerJsDoc(swaggerOptions);
 
 // app.use(cors(corOptions));
 app.use(cors());
+app.use(fileUpload());
 app.use(express.static('./')); 
 app.use('/docs', swaggerUi.serve, swaggerUi.setup(swaggerDocs));
 
