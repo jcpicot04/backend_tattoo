@@ -14,8 +14,12 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.STRING,
             allowNull: false
         },
-        idcategoria: {
-            type: DataTypes.INTEGER,
+        titulo: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
+        zona: {
+            type: DataTypes.STRING,
             allowNull: false
         }
     });

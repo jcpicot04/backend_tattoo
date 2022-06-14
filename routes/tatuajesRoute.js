@@ -89,4 +89,31 @@ router.put('/updateTatuaje/:id', tatuajesController.updateTatuaje);
  */
 router.delete('/deleteTatuaje/:id', tatuajesController.deleteTatuaje);
 
+/**
+ * @swagger
+ * /tatuajes/addCategoriaTatuaje:
+ *   post:
+ *     summary: Añadir tatuaje a categoría
+ *     tags: [Posts]
+ *     parameters:
+ *       - in : path
+ *         name: idtatuaje
+ *         description: ID del tatuaje
+ *         schema:
+ *           type: integer
+ *         required: true
+ *       - in : path
+ *         name: idcategoria
+ *         description: ID de la categoría
+ *         schema:
+ *           type: integer
+ *         required: true
+ *     responses:
+ *       200:
+ *         description: Tatuaje añadido a la categoría
+ *       400:
+ *         description: Error
+ */
+ router.post('/addCategoriaTatuaje', tatuajesController.addCategoriaTatuaje);
+
 module.exports = router;

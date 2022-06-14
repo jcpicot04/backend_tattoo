@@ -31,7 +31,12 @@ const addTatuador = async (req, res) => {
       if (!fs.existsSync(pathFile)) {
         shell.mkdir("-p", pathFile);
       }
-
+      const pathTatuajes =
+        require("path").resolve(__dirname, "..") +
+        `/public/tatuadores/${tatuador.id}/tatuajes`;
+      if (!fs.existsSync(pathTatuajes)) {
+        shell.mkdir("-p", pathTatuajes);
+      }
       file.mv(pathFile + "/logo.jpg", function (err) {
         if (err) return res.status(500).send(err);
       });

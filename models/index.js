@@ -41,6 +41,7 @@ db.tatuadores = require("./tatuadoresModel.js")(sequelize,DataTypes);
 db.tatuajes = require("./tatuajesModel.js")(sequelize,DataTypes);
 db.categorias = require("./categoriasModel.js")(sequelize,DataTypes);
 db.estudios = require("./estudiosModel.js")(sequelize,DataTypes);
+db.tatuajes_categorias = require("./tatuajesCategoriasModel.js")(sequelize,DataTypes);
 
 db.sequelize.sync({ force: false})
 .then(() => {
