@@ -1,6 +1,8 @@
 const db = require("../models");
 
 const Tatuadores = db.tatuadores;
+const Estudios = db.estudios;
+
 
 const addTatuador = async (req, res) => {
   if (!req.files || Object.keys(req.files).length === 0) {
@@ -56,8 +58,37 @@ const addTatuador = async (req, res) => {
 };
 
 const getAllTatuadores = async (req, res) => {
-  let tatuadores = await Tatuadores.findAll({});
-  res.status(200).send(tatuadores);
+  let tatuadores = await Tatuadores.findAll();
+  let tatuadoresEstudio = [];
+  if(tatuadores){
+    for (let t = 0; t < tatuadores.length; t++){
+      let tatuador = {
+        "id" : tatuadores[t].id,
+        "nombre" : tatuadores[t].nombre,
+        "descripcion" : tatuadores[t].descripcion,
+        "instagram" : tatuadores[t].instagram,
+        "localizacion" : tatuadores[t].localizacion,
+        "imagen" : tatuadores[t].imagen,
+        "telefono" : tatuadores[t].telefono,
+        "mail" : tatuadores[t].mail,
+        "idestudio" : tatuadores[t].idestudio,
+      }
+      if (tatuadores[t].idestudio) {
+        let estudio = await Estudios.findOne({ where: { id : tatuadores[t].idestudio}});
+        console.log(estudio.nombre)
+        tatuador["estudio"] = {
+            "nombre" : estudio.nombre,
+            "latitud" : estudio.latitud,
+            "longitud" : estudio.longitud,
+            "imagen" : estudio.imagen
+        }   
+      }
+
+      tatuadoresEstudio.push(tatuador);
+    }
+  }
+
+  res.status(200).send(tatuadoresEstudio);
 };
 
 const getOneTatuador = async (req, res) => {
