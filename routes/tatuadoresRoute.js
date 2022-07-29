@@ -102,7 +102,7 @@ router.put('/updateTatuador/:id', tatuadoresController.updateTatuador);
  * @swagger
  * /tatuadores/deleteTatuador/{id}:
  *   delete:
- *     summary: Eliminar un tatuador
+ *     summary: Eliminar un tatuador 
  *     tags: [Deletes]
  *     parameters:
  *       - in : path
